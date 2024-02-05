@@ -232,28 +232,7 @@ class SignForums(Task):
         return super().run()
 
 
-class LikeHotForums(Task):
-    name: str = "关注最近热门的吧"
 
-    def __init__(self, cli: Tieba) -> None:
-        self.cli = cli
-
-    def run(self):
-        forums = self.cli.get_hot_forums(8, 20)
-        n_succeed = 0
-        for forum in forums[::-1]:
-            try:
-                n_succeed += self.cli.like(forum.forum_id, forum.forum_name)
-            except Exception as e:
-                self.logger.error(f"[{self.name}] 关注贴吧异常：{str(e)}")
-
-        for channel in self.cli.channels:
-            try:
-                channel.send(f"成功关注 {n_succeed} 个贴吧")  
-            except Exception as e:
-                self.logger.error(f"[{channel.name}] 发送消息失败: {str(e)}")
-
-        return super().run()
 
 
 if __name__ == "__main__":
