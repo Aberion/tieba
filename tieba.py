@@ -257,7 +257,7 @@ class LikeHotForums(Task):
 
 
 if __name__ == "__main__":
-    cli = Tieba("<BDUSS>", [
+    cli = Tieba("mxpMWhBeDVrTTBzSWdjSFp6cTZUSE9LMVVJM0tNSHlPSjM0cX5jTHNORUxKdWhsRVFBQUFBJCQAAAAAAAAAAAEAAABJu8uQt7G7qrrjt-EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAuZwGULmcBlM", [
         LarkChannel("<飞书 webhook>"),
         WorkWechatBotChannel("<企业微信机器人 key>"),
     ])
